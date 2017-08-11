@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'wjxfont';
+    src: url('../fonts/MyriadPro-LightSemiExt.otf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    background: #161a22 url("../img/homeBG.png") no-repeat;
+    font-family: "wjxfont", "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+.WXlogo {
+    position: absolute;
+    left: 227px;
+    top: 68px;
+    width: 173px;
+    height: 83px;
+    background: url("../img/WXlogo.png");
+}
+
+.home-menu {
+    position: absolute;
+    top: 90px;
+    right: 230px;
+    font-size: 28px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: #ffd33b;
+}
+
+.home-menu li {
+    float: left;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.intro {
+    position: absolute;
+    left: 574px;
+    top: 486px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 34px;
+    line-height: 88px;
+    font-weight: 200;
+}
+
+.intro span {
+    margin-left: 20px;
+    font-size: 56px;
+}
+
+.intro-one {
+    position: relative;
+    left: 158px;
+}
+
+.intro-two {
+    position: relative;
+    left: 60px;
+}
+
+.intro-three {
+    position: relative;
+    left: 210px;
+}
