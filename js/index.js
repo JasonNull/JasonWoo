@@ -6,7 +6,13 @@ $(function () {
         2: ".about-content-contact"
     }
     var contentNum = 0;
-    $(".rtUp").click(function () {
+    $(".rtUp").on("click",prevPage);
+    $(".rtDown").on("click",nextPage);
+    $(".mini-prev-page").on("click",prevPage);
+    $(".mini-next-page").on("click",nextPage);
+    $(".rtTool").on("click",showSkillPage);
+    $(".mini-show-skill").on("click",showSkillPage);
+    function prevPage() {
         contentNum--;
         if (contentNum < 0) {
             contentNum = 0;
@@ -18,10 +24,10 @@ $(function () {
         };
         $(".about-content-row").children().children().hide();
         $(contentJson[contentNum]).fadeIn();
-    });
-    $(".rtDown").click(function () {
+    }
+
+    function nextPage() {
         contentNum++;
-        console.log(contentNum);
         if (contentNum > 2) {
             contentNum = 2;
             $(contentJson[contentNum]).addClass("shake");
@@ -32,22 +38,16 @@ $(function () {
         };
         $(".about-content-row").children().children().hide();
         $(contentJson[contentNum]).fadeIn();
-    });
-    $(".rtEye").click(function () {
-        window.location.href = "demo.html";
-    });
-    $(".rtHome").click(function () {
-        window.location.href = "index.html";
-    });
-    $(".rtId").click(function () {
-
-    });
-    $(".rtTool").click(function () {
+    }
+   
+    function showSkillPage() {
+        console.log("技能展示");
         contentNum = 1;
         $(".about-content-row").children().children().hide();
-        $("." + $(this).data("content")).fadeIn();
-    });
-    $(".flip-bigball").on("ontouchstart",function(){
+        $(contentJson[contentNum]).fadeIn();
+    }
+
+    $(".flip-bigball").on("ontouchstart", function () {
         console.log("1024");
     });
 })

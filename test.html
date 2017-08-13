@@ -18,9 +18,11 @@
     <![endif]-->
     <style>
         body {
+            padding: 0 !important;
             height: 1080px;
-            background: #ccc url("img/demoBG.png") no-repeat center center;
+            background: red url("img/demoBG.png") no-repeat center center;
         }
+
         .container {
             position: relative;
         }
@@ -54,6 +56,26 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="flip-container flip-bigball max-width" onmouseenter="this.classList.toggle('hover');">
+                    <div class="flipper max-width">
+                        <div class="front max-width">
+                            <img src="img/bigball.png" class="max-width" alt="">
+                        </div>
+                        <div class="back max-width">
+                            <!-- 背面内容 -->
+                            <img src="img/bigball2.png" class="max-width" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <video width="80%" poster="img/G5.png" controls="controls" >
+        <source src="video/g5.mp4" type="video/mp4" />
+        <object data="video/g5.mp4" width="320" height="240"></object>
 
     <script src="lib/jquery.min.js "></script>
     <script src="lib/bootstrap.min.js "></script>

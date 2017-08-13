@@ -6,11 +6,15 @@
 }
 
 body {
-    /* overflow-x: hidden; */
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0 !important;
     font-family: "wjxfont", "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
-
+.container{
+    overflow: hidden;
+}
 /* #home  */
 
 
@@ -108,7 +112,18 @@ body {
         background-color: transparent;
     }
 }
+@media(max-width:960px){
+    #home .navbar-right>li{
+        float: left;
+    }
+}
 
+@media(max-width:500px){
+    #home .navbar-right>li>a{
+        font-size: 14px;
+        padding: 20px 8px;
+    }
+}
 .navbar-wjx .navbar-link {
     color: #777;
 }
@@ -348,10 +363,13 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
     font-size: 34px;
     color: #ffd33b;
     font-weight: bold;
+    text-align: center;
 }
 
 .about-content-skill {
+    font-family: "Myriad", "Microsoft Yehei", sans-serif;
     display: none;
+    text-align: center;
     letter-spacing: 2px;
     color: #fff;
     font-size: 100%;
@@ -360,12 +378,6 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 
 .about-content-contact {
     display: none;
-    position: absolute;
-    width: 580px;
-    left: 50%;
-    top: 50%;
-    margin-left: -278px;
-    margin-top: -60px;
     letter-spacing: 2px;
     text-align: center;
     color: #fff;
@@ -504,11 +516,13 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 
 .mini-content-nav li {
     float: left;
+    padding: 0;
+    text-align: center;
 }
 
 .mini-content-nav li>img {
-    width: 64px;
-    margin: 0px 13px;
+    width: 52px;
+    margin: 0px 10px;
 }
 
 
@@ -689,13 +703,18 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 
 #thanks .flip-container {
     margin-top: 60px;
+    height: 600px;
 }
 
 #thanks .max-width {
     width: 100%;
 }
 
-#thanks .thanks-content-front{
+#thanks  .flip-container .front,
+#thanks .flip-container .back {
+    height: 600px;
+}
+#thanks .thanks-content-front {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -703,9 +722,11 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
     margin-top: 108px;
     color: #fff;
 }
-#thanks .thanks-content-front h3{
+
+#thanks .thanks-content-front h3 {
     font-size: 51px;
 }
+
 #thanks .thanks-content-back {
     position: absolute;
     left: 50%;
@@ -716,7 +737,31 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
     font-size: 20px;
     text-align: center;
 }
+
+
 /* thanks end  */
-#idModal{
-  padding: 0 !important;  
+
+#idModal {
+    padding: 0 !important;
+}
+
+#idModal .modal-header {
+    color: #1b7ad0;
+    letter-spacing: 3px;
+}
+
+#idModal .modal-body {
+    text-align: center;
+}
+
+#idModal .glyphicon {
+    font-size: 40px;
+    margin: 0 64px;
+    color: #3a9ff9;
+}
+
+#idModal .btn-jianli {
+    background-color: #3a9ff9;
+    border-color: #3a9ff9;
+    border-radius: 4px;
 }

@@ -38,8 +38,8 @@
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#design">Design</a></li>
                         <li><a href="#aboutMe">AboutME</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="weijinsuo/index.html">Demo</a></li>
+                        <li data-toggle="modal" data-target="#idModal"><a href="#contact">Contact</a></li>
+                        <li><a href="weijinsuo/index.html" target="_blank">Demo</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,12 +82,12 @@
         <div class="container">
             <div class="row">
                 <div class="about-board col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-                    <div class="row">
+                    <div class="row" >
                         <div class="col-xs-4 col-xs-offset-4 text-center  head-logo">
                             <img class="wjxHead" src="img/wjxHead.png" alt="">
                         </div>
                     </div>
-                    <div class="row about-content-row">
+                    <div class="row about-content-row" >
                         <div class="col-md-8 col-md-offset-2">
                             <div class="about-content-intro">
                                 <h1>About</h1>
@@ -113,11 +113,9 @@
                             </div>
                             <div class="about-content-skill">
                                 <h1>Skill</h1>
-                                <p>我比较熟悉 HMTL CSS JS </p>
-                                <p>以及jQuery , Bootstrap 和 underscore 框架</p>
+                                <p>我比较熟悉 HMTL CSS JS 以及jQuery , Bootstrap 和 underscore 框架</p>
                                 <p>---</p>
-                                <p>也了解一些 ReactJS 以及 NodeJS 技术</p>
-                                <p>掌握基本的Less gulp 以及 webpack 工具操作</p>
+                                <p>掌握基本的Less gulp 以及 webpack 工具操作,对ReactJs有一些了解</p>
                                 <p>---</p>
                                 <p>同时，由于我之前是做动效和视频设计的，所以对Ps Ai Ae 这些软件都是比较熟悉的，和视觉设计方面的配合应该会不错，希望能得到一份前端开发的实习工作，谢谢！</p>
                             </div>
@@ -132,10 +130,10 @@
                             </div>
                             <div class="mini-content-nav container visible-xs-block">
                                 <ul class="row">
-                                    <li class="col-xs-3"><img src="img/aboutUp.png" alt=""></li>
-                                    <li class="col-xs-3"><img src="img/aboutTool.png" alt=""></li>
-                                    <li class="col-xs-3"><img src="img/aboutId.png" alt=""></li>
-                                    <li class="col-xs-3"><img src="img/aboutDown.png" alt=""></li>
+                                    <li class="col-xs-3"><img class="mini-prev-page" src="img/aboutUp.png" alt=""></li>
+                                    <li class="col-xs-3"><img class="mini-show-skill" src="img/aboutTool.png" alt=""></li>
+                                    <li class="col-xs-3"><img data-toggle="modal" data-target="#idModal" src="img/aboutId.png" alt=""></li>
+                                    <li class="col-xs-3"><img class="mini-next-page" src="img/aboutDown.png" alt=""></li>
                                 </ul>
                             </div>
                         </div>
@@ -158,12 +156,12 @@
                 <div class="flip-container rtEye" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <a href="#home" class="abEye"><img src="img/aboutEye.png" alt=""></a>
+                            <a  href="weijinsuo/index.html" target="_blank"><img src="img/aboutEye.png" alt=""></a>
                             <!-- 前面内容 -->
                         </div>
                         <div class="back">
                             <!-- 背面内容 -->
-                            <a href="/demo.html" class="abEye"><img src="img/aboutEyeB.png" alt=""></a>
+                            <a href="weijinsuo/index.html" target="_blank"><img src="img/aboutEyeB.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -182,36 +180,36 @@
                 <div class="flip-container rtId" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <a href="#aboutMe" class="abId"><img src="img/aboutId.png" alt=""></a>
+                           <img src="img/aboutId.png" alt="">
                             <!-- 前面内容 -->
                         </div>
                         <div class="back" data-toggle="modal" data-target="#idModal">
                             <!-- 背面内容 -->
-                            <a href="#aboutMe" class="abId"><img src="img/aboutIdB.png" alt=""></a>
+                           <img src="img/aboutIdB.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="flip-container rtTool" data-content="about-content-skill" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <a href="#aboutMe" class="abTool"><img src="img/aboutTool.png" alt=""></a>
+                            <img src="img/aboutTool.png" alt="">
                             <!-- 前面内容 -->
                         </div>
                         <div class="back">
                             <!-- 背面内容 -->
-                            <a href="#aboutMe" class="abTool"><img src="img/aboutToolB.png" alt=""></a>
+                            <img src="img/aboutToolB.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="flip-container rtDown" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <a href="#aboutMe" class="abDown"><img src="img/aboutDown.png" alt=""></a>
+                            <img src="img/aboutDown.png" alt="">
                             <!-- 前面内容 -->
                         </div>
                         <div class="back">
                             <!-- 背面内容 -->
-                            <a href="#aboutMe" class="abDown"><img src="img/aboutDownB.png" alt=""></a>
+                            <img src="img/aboutDownB.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -223,8 +221,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-xs-offset-3">
-                    <div class="flip-container flip-bigball max-width" onmouseenter="this.classList.toggle('hover');">
-                        <div class="flipper max-width">
+                    <div class="flip-container flip-bigball max-width" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper max-width" style="height:100%;">
                             <div class="front max-width">
                                 <img src="img/bigball.png" class="max-width" alt="">
                             </div>
@@ -245,14 +243,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">下载简历到本地</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <i class="glyphicon glyphicon-cloud"></i>
+                    <i class="glyphicon glyphicon-arrow-right"></i>
+                    <i class="glyphicon glyphicon-hdd"></i>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <a href="data/WuJiaXiang.zip" class="btn btn-primary btn-jianli">确定下载</a>
                 </div>
             </div>
         </div>
