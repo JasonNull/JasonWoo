@@ -12,9 +12,11 @@ body {
     font-family: "wjxfont", "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
-.container{
+.container {
     overflow: hidden;
 }
+
+
 /* #home  */
 
 
@@ -112,18 +114,20 @@ body {
         background-color: transparent;
     }
 }
-@media(max-width:960px){
-    #home .navbar-right>li{
+
+@media(max-width:960px) {
+    #home .navbar-right>li {
         float: left;
     }
 }
 
-@media(max-width:500px){
-    #home .navbar-right>li>a{
+@media(max-width:500px) {
+    #home .navbar-right>li>a {
         font-size: 14px;
         padding: 20px 8px;
     }
 }
+
 .navbar-wjx .navbar-link {
     color: #777;
 }
@@ -216,7 +220,13 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 #design {
     position: relative;
     height: 1080px;
-    background: url("../img/demoBG.png") no-repeat center center;
+    /* background: url("../img/demoBG.png") no-repeat center center; */
+}
+
+#design .design-BG {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #design .head-flying {
@@ -261,10 +271,13 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 #design .dsg-works-2 {
     margin-top: 67px;
 }
+
 #design .dsg-works img,
-#design .dsg-works-2 img{
+#design .dsg-works-2 img {
     width: 80%;
 }
+
+
 /* design end  */
 
 
@@ -273,7 +286,14 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 #aboutMe {
     position: relative;
     height: 1080px;
-    background: #031239 url(../img/aboutBG2.png) no-repeat center center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#aboutMe .about-BG {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #aboutMe .about-board {
@@ -687,13 +707,16 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
 /* #thanks  */
 
 #thanks {
+    position: relative;
     width: 100%;
     height: 1080px;
-    background: #3bf3eb url(../img/thanksPage.png) no-repeat center center;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #thanks .flip-container {
-    margin-top: 60px;
+    margin-top: 42px;
+    width: 80%;
     height: 600px;
 }
 
@@ -701,10 +724,11 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
     width: 100%;
 }
 
-#thanks  .flip-container .front,
+#thanks .flip-container .front,
 #thanks .flip-container .back {
     height: 600px;
 }
+
 #thanks .thanks-content-front {
     position: absolute;
     left: 50%;

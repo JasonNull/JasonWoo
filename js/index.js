@@ -50,4 +50,49 @@ $(function () {
     $(".flip-bigball").on("ontouchstart", function () {
         console.log("1024");
     });
+
+    // var tplstr = $("#feed_template_1").html();
+   
+    // var compiled = _.template(tplstr);
+    // $.get("data/page1.json",function(data,status){
+    //     var compiledStr = compiled(data);
+    //     $("#pageOne").html(compiledStr);
+    // });
+
+    var lock = true;
+    var pagenum = 0;
+        
+    
+    $(window).on("scroll",function(){
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var documentHeight = $(document).height();
+        var lastHeight = documentHeight - windowHeight-scrollTop;
+        if(lastHeight < 100 && lock){
+            console.log("??200");
+            lock = false;
+            pagenum++;
+            getAndRender(pagenum);
+            console.log(lock);
+        }
+    }).trigger("scroll");
+
+    function getAndRender(pagenum){
+        var feed_id="#page_"+pagenum;
+        var tpl_id = "#feed_template_"+pagenum;
+        var tpl_str = $(tpl_id).html();
+        var compiled = _.template(tpl_str);
+        var url = "data/page"+pagenum+".json";
+        $.get(url,function(data,status){
+            var compiledStr = compiled(data);
+            $(feed_id).html(compiledStr);
+            lock = true;
+            if(data.end){
+                console.log("theEnd");
+                setTimeout(function(){lock=false;},300);
+            };
+            console.log(lock);
+        });
+    }
+    
 })
