@@ -258,22 +258,13 @@ fieldset[disabled] .navbar-wjx .btn-link:focus {
     margin-top: 230px;
 }
 
-#design .dsg-works>div {
-    text-align: center;
-    padding: 2% 0;
+#design .dsg-works-2 {
+    margin-top: 67px;
 }
-
-#design .dsg-works img {
-    text-align: center;
+#design .dsg-works img,
+#design .dsg-works-2 img{
     width: 80%;
-    transition: 0.4s cubic-bezier(0, .62, .4, .95);
 }
-
-#design .dsg-works img:hover {
-    box-shadow: 0 10px 84px #2edaff;
-}
-
-
 /* design end  */
 
 
