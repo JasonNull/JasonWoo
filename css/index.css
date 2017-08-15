@@ -45,6 +45,7 @@ body {
 
 .navbar-wjx .navbar-nav>li>a {
     color: #ffd33b;
+    cursor: pointer;
 }
 
 .navbar-wjx .navbar-nav>li>a:hover,

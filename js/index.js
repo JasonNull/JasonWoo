@@ -6,12 +6,13 @@ $(function () {
         2: ".about-content-contact"
     }
     var contentNum = 0;
-    $(".rtUp").on("click",prevPage);
-    $(".rtDown").on("click",nextPage);
-    $(".mini-prev-page").on("click",prevPage);
-    $(".mini-next-page").on("click",nextPage);
-    $(".rtTool").on("click",showSkillPage);
-    $(".mini-show-skill").on("click",showSkillPage);
+    $(".rtUp").on("click", prevPage);
+    $(".rtDown").on("click", nextPage);
+    $(".mini-prev-page").on("click", prevPage);
+    $(".mini-next-page").on("click", nextPage);
+    $(".rtTool").on("click", showSkillPage);
+    $(".mini-show-skill").on("click", showSkillPage);
+
     function prevPage() {
         contentNum--;
         if (contentNum < 0) {
@@ -39,7 +40,7 @@ $(function () {
         $(".about-content-row").children().children().hide();
         $(contentJson[contentNum]).fadeIn();
     }
-   
+
     function showSkillPage() {
         console.log("技能展示");
         contentNum = 1;
@@ -52,7 +53,7 @@ $(function () {
     });
 
     // var tplstr = $("#feed_template_1").html();
-   
+
     // var compiled = _.template(tplstr);
     // $.get("data/page1.json",function(data,status){
     //     var compiledStr = compiled(data);
@@ -61,14 +62,14 @@ $(function () {
 
     var lock = true;
     var pagenum = 0;
-        
-    
-    $(window).on("scroll",function(){
+
+
+    $(window).on("scroll", function () {
         var scrollTop = $(window).scrollTop();
         var windowHeight = $(window).height();
         var documentHeight = $(document).height();
-        var lastHeight = documentHeight - windowHeight-scrollTop;
-        if(lastHeight < 100 && lock){
+        var lastHeight = documentHeight - windowHeight - scrollTop;
+        if (lastHeight < 60 && lock) {
             console.log("??200");
             lock = false;
             pagenum++;
@@ -77,22 +78,69 @@ $(function () {
         }
     }).trigger("scroll");
 
-    function getAndRender(pagenum){
-        var feed_id="#page_"+pagenum;
-        var tpl_id = "#feed_template_"+pagenum;
+    function getAndRender(pagenum) {
+        var feed_id = "#page_" + pagenum;
+        var tpl_id = "#feed_template_" + pagenum;
         var tpl_str = $(tpl_id).html();
         var compiled = _.template(tpl_str);
-        var url = "data/page"+pagenum+".json";
-        $.get(url,function(data,status){
+        var url = "data/page" + pagenum + ".json";
+        $.get(url, function (data, status) {
             var compiledStr = compiled(data);
             $(feed_id).html(compiledStr);
             lock = true;
-            if(data.end){
+            if (data.end) {
                 console.log("theEnd");
-                setTimeout(function(){lock=false;},300);
+                setTimeout(function () {
+                    lock = false;
+                }, 300);
             };
             console.log(lock);
         });
     }
-    
+    var leader = 0,
+        target = 0;
+    $("#toHome").on("click", function () {
+        target = 11;
+        $("#main_nav li").removeClass("active");
+        $(this).addClass("active");
+        var Timer = setInterval(function () {
+            leader += (target - leader) / 10;
+            if (Math.abs(target - leader) < 1) {
+                clearInterval(Timer);
+                leader = target;
+            };
+            window.scrollTo(0, leader);
+        }, 30);
+    });
+    $("#toDesign").on("click", function () {
+        target = 1080;
+        $("#main_nav li").removeClass("active");
+        $(this).addClass("active");
+        var Timer = setInterval(function () {
+            leader += (target - leader) / 10;
+            if (Math.abs(target - leader) < 1) {
+                clearInterval(Timer);
+                leader = target;
+            };
+            window.scrollTo(0, leader);
+        }, 30);
+    });
+    $("#toAbout").on("click", function () {
+        target = 2160;
+        $("#main_nav li").removeClass("active");
+        $(this).addClass("active");
+        var Timer = setInterval(function () {
+            leader += (target - leader) / 10;
+            if (Math.abs(target - leader) < 1) {
+                clearInterval(Timer);
+                leader = target;
+            };
+            window.scrollTo(0, leader);
+        }, 30);
+    });
+
+    $(window).on("scroll", function () {
+        leader = $(window).scrollTop();
+    });
+
 })
