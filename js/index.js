@@ -42,7 +42,7 @@ $(function () {
     }
 
     function showSkillPage() {
-        console.log("技能展示");
+        console.log("æŠ€èƒ½å±•ç¤º");
         contentNum = 1;
         $(".about-content-row").children().children().hide();
         $(contentJson[contentNum]).fadeIn();
@@ -51,19 +51,8 @@ $(function () {
     $(".flip-bigball").on("ontouchstart", function () {
         console.log("1024");
     });
-
-    // var tplstr = $("#feed_template_1").html();
-
-    // var compiled = _.template(tplstr);
-    // $.get("data/page1.json",function(data,status){
-    //     var compiledStr = compiled(data);
-    //     $("#pageOne").html(compiledStr);
-    // });
-
     var lock = true;
     var pagenum = 0;
-
-
     $(window).on("scroll", function () {
         var scrollTop = $(window).scrollTop();
         var windowHeight = $(window).height();
@@ -138,9 +127,19 @@ $(function () {
             window.scrollTo(0, leader);
         }, 30);
     });
-
     $(window).on("scroll", function () {
         leader = $(window).scrollTop();
-    });
+        if (leader >= 0 && leader <= 1080) {
+            $("#main_nav li").removeClass("active");
+            $("#main_nav li").eq(0).addClass("active");
+        } else if (leader >= 1080 && leader <= 2160) {
+            $("#main_nav li").removeClass("active");
+            $("#main_nav li").eq(1).addClass("active");
+        } else if (leader >= 2160 && leader <= 3240) {
+            $("#main_nav li").removeClass("active");
+            $("#main_nav li").eq(2).addClass("active");
+        }
+
+    })
 
 })
